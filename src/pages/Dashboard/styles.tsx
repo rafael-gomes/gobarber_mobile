@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { FlatList } from 'react-native';
-import { Provider } from './index';
 import { RectButton } from 'react-native-gesture-handler';
+import { Provider } from './index';
 
 export const Container = styled.View`
   flex: 1;
@@ -68,7 +68,7 @@ export const ProviderInfo = styled.View`
 export const ProviderName = styled.Text`
   font-family: 'Robot-Slab-Medium';
   font-size: 18px;
-  color: #f4ede8
+  color: #f4ede8;
 `;
 export const ProviderMeta = styled.View`
   flex-direction: row;

@@ -45,15 +45,20 @@ const Dashboard: React.FC = () => {
     signOut();
   }, [signOut]);
 
-  const navigateToCreateAppointment = useCallback((providerId: string) => {
-    navigate('CreateAppointment', { providerId });
-  }, [navigate]);
+  const navigateToCreateAppointment = useCallback(
+    (providerId: string) => {
+      navigate('CreateAppointment', { providerId });
+    },
+    [navigate],
+  );
 
   return (
     <Container>
       <Header>
         <HeaderTitle>
-          Bem Vindo, {'\n'}
+          Bem Vindo,
+{' '}
+{'\n'}
           <UserName>{user.name}</UserName>
         </HeaderTitle>
 
@@ -64,12 +69,14 @@ const Dashboard: React.FC = () => {
 
       <ProvidersList
         data={providers}
-        keyExtractor={(provider) => provider.id}
+        keyExtractor={provider => provider.id}
         ListHeaderComponent={
           <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
         }
-        renderItem={( { item: provider }) => (
-          <ProviderContainer onPress={() => navigateToCreateAppointment(provider.id)}>
+        renderItem={({ item: provider }) => (
+          <ProviderContainer
+            onPress={() => navigateToCreateAppointment(provider.id)}
+          >
             <ProviderAvatar source={{ uri: provider.avatar_url }} />
 
             <ProviderInfo>
@@ -88,7 +95,6 @@ const Dashboard: React.FC = () => {
           </ProviderContainer>
         )}
       />
-
     </Container>
   );
 };
