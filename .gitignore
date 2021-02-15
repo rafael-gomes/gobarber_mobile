@@ -64,3 +64,5 @@ buck-out/
 
 # Watchman cookies
 .watchmanconfig
+
+coverage/
